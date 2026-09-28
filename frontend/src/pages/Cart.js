@@ -1,6 +1,5 @@
 import { useCart } from '../context/CartContext';
 import { useNavigate } from 'react-router-dom';
-import { formatPrice } from '../utils/format';
 
 export default function Cart() {
   const { cart, removeFromCart, total } = useCart();
