@@ -1,0 +1,143 @@
+:root {
+  --rose-tan: #b76e79;
+  --rose-tan-dark: #9a5a64;
+  --bridal-rose: #ebc2c2;
+  --rose-quartz: #f7d9db;
+  --satin-shine: #ffe4e1;
+  --deep-mauve: #5a2a38;
+  --cream: #fff8f8;
+  --satin-gradient: linear-gradient(135deg, #f7d9db 0%, #ebc2c2 40%, #ffe4e1 70%, #b76e79 100%);
+  --button-gradient: linear-gradient(135deg, #c08497 0%, #b76e79 100%);
+  --soft-shadow: 0 4px 20px rgba(183, 110, 121, 0.15);
+  --hover-shadow: 0 8px 30px rgba(183, 110, 121, 0.3);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  background: var(--rose-quartz);
+  color: var(--deep-mauve);
+  min-height: 100vh;
+}
+
+.btn {
+  background: var(--button-gradient);
+  color: var(--cream);
+  border: none;
+  padding: 10px 22px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--soft-shadow);
+  font-family: inherit;
+  font-size: 14px;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: var(--hover-shadow); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--rose-tan);
+  border: 2px solid var(--rose-tan);
+}
+.btn-outline:hover { background: var(--rose-tan); color: var(--cream); }
+
+input, select, textarea {
+  padding: 12px 16px;
+  border: 2px solid var(--bridal-rose);
+  border-radius: 12px;
+  background: var(--cream);
+  font-family: inherit;
+  color: var(--deep-mauve);
+  outline: none;
+  transition: 0.3s;
+  font-size: 14px;
+}
+input:focus, select:focus {
+  border-color: var(--rose-tan);
+  box-shadow: 0 0 0 4px rgba(183, 110, 121, 0.15);
+}
+
+.card {
+  background: var(--cream);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: var(--soft-shadow);
+  transition: all 0.3s ease;
+  border: 1px solid var(--bridal-rose);
+}
+.card:hover { transform: translateY(-5px); box-shadow: var(--hover-shadow); }
+
+.navbar {
+  background: var(--satin-gradient);
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: var(--soft-shadow);
+  border-bottom: 2px solid var(--bridal-rose);
+}
+.navbar a, .navbar button {
+  color: var(--deep-mauve);
+  text-decoration: none;
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  transition: 0.3s;
+  font-family: inherit;
+}
+.navbar a:hover, .navbar button:hover { background: rgba(255, 255, 255, 0.5); }
+.navbar .brand {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #b76e79, #5a2a38);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero {
+  background: var(--satin-gradient);
+  padding: 60px 40px;
+  text-align: center;
+  border-radius: 24px;
+  margin: 24px;
+  box-shadow: var(--soft-shadow);
+}
+.hero h1 { font-size: 48px; font-weight: 800; margin-bottom: 12px; letter-spacing: 1px; }
+.hero p { font-size: 18px; opacity: 0.85; }
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 24px;
+  padding: 24px;
+}
+
+.badge {
+  display: inline-block;
+  background: var(--bridal-rose);
+  color: var(--deep-mauve);
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.badge.status-pending { background: #f4c2c2; }
+.badge.status-shipped { background: #b76e79; color: #fff; }
+.badge.status-delivered { background: #8fbc8f; color: #fff; }
+.badge.status-processing { background: #f5c26b; }
+.badge.status-cancelled { background: #d68b8b; color: #fff; }
+/* Smooth page transitions */
+body * { transition: background-color 0.2s ease, color 0.2s ease; }
+
+/* Better focus ring for accessibility */
+button:focus-visible, a:focus-visible, input:focus-visible {
+  outline: 3px solid var(--rose-tan);
+  outline-offset: 2px;
+}
